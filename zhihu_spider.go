@@ -24,15 +24,6 @@ func (spider* ZhihuSpider) SearchTopic(id string, pageNumber string)(){
 
 	doc.Find(".zm-item-rich-text").Each(func(i int, s *goquery.Selection) {
 		title := spider.Translate(s.Text())
-		if strings.Contains(title, "老外"){
-			fmt.Println(url)
-		}
-		if strings.Contains(title, "黑人"){
-			fmt.Println(url)
-		}
-		if strings.Contains(title, "外国"){
-			fmt.Println(url)
-		}
 
 		srcUrl, exists := s.Attr("data-entry-url")
 		if !exists {
@@ -54,16 +45,6 @@ func (spider* ZhihuSpider) SearchQuestion(url string){
 		return
 	}
 	//fmt.Println(url)
-	text, _ := doc.Html()
-	if strings.Contains(text, "老外"){
-		fmt.Println(url)
-	}
-	if strings.Contains(text, "黑人"){
-		fmt.Println(url)
-	}
-	if strings.Contains(text, "外国"){
-		fmt.Println(url)
-	}
 
 
 	//return
